@@ -20,17 +20,43 @@ module.exports = {
       {
         test: /\.css$/,
         use:  [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] // добавили минификацию CSS
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|ico)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './images/[name].[ext]', // указали папку, куда складывать изображения
+              esModule: false
+            }
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {}
+          },
+        ]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "fonts/[name].[ext]",
+          },
+        },
       }
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({ // 
+    new MiniCssExtractPlugin({ //
       filename: 'style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      favicon: 'src/images/favicon.ico'
     }),
     new WebpackMd5Hash()
   ]
