@@ -1,0 +1,12 @@
+@import url(./__item-pic/menu__item-pic.css);
+@import url(./__item/menu__item.css);
+@import url(./__link/menu__link.css);
+
+.menu {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  grid-template-rows: 100%;
+  margin: 0;
+  align-items: center;
+}

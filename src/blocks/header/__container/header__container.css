@@ -1,0 +1,9 @@
+.header__container {
+  padding: 0 70px 0 70px;
+  height: 80%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 100%;
+  gap: 10px;
+  width: 100%;
+}

@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>Webpack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D08r0</title>
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
     <link rel="icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon">
 </head>
+
 <body>
-    <h1>Hello</h1>
-    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <div class="page">
+    <div class="header">
+      <div class="header__container">
+        <a href="./index.html" class="header__logo">
+          <img class="header__logo-pic" src="<%=require('./images/logo.png')%>" alt="Логотип">
+        </a>
+        <ul class="menu">
+          <li class="menu__item"><a href="./index.html" class="menu__link">Войти</a></li>
+          <li class="menu__item"><a href="./index.html" class="menu__link">Регистрация</a></li>
+          <li class="menu__item"><a href="./index.html" class="menu__link">
+            <img class="menu__item-pic" src="<%=require('./images/shop.png')%>" alt="Корзина"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
